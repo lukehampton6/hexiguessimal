@@ -7,22 +7,24 @@ function RandomColor() {
        return randomColor;
     }
 
-    const hex = generateColor();
-    const colorDivs = [];
+    const correctColor = generateColor();
+    const colorArray = [];
 
-    const generateColorDivs = function() {
+    const generateColorArray = function() {
         for (let i = 0; i < 5; i++) {
             const newColor = generateColor()
-            colorDivs.push(newColor);
+            colorArray.push(newColor);
         }
     }
-    generateColorDivs();
+    generateColorArray();
+    colorArray.push(correctColor);
+    const shuffledColors = colorArray.sort(() => Math.random() - 0.5);
 
     return (
         <div>
-            <h1 style={{color: hex}}>{hex}</h1>
+            <h1 style={{color: correctColor}}>{correctColor}</h1>
             <div>
-            {colorDivs.map((mappedColor) => {
+            {shuffledColors.map((mappedColor) => {
                 console.log(mappedColor)
                 return (
                     <h1 key={mappedColor} style={{color: mappedColor}}>lol</h1>
