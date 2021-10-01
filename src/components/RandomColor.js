@@ -1,6 +1,4 @@
 function RandomColor() {
-    // const randomCode = Math.floor(Math.random()*16777215).toString(16);
-    // const randomColor = "#" + randomCode;
     const generateColor = function() {
        let randomColor = '#'
        while (randomColor.length < 7) {
@@ -9,9 +7,28 @@ function RandomColor() {
        return randomColor;
     }
 
+    const hex = generateColor();
+    const colorDivs = [];
+
+    const generateColorDivs = function() {
+        for (let i = 0; i < 5; i++) {
+            const newColor = generateColor()
+            colorDivs.push(newColor);
+        }
+    }
+    generateColorDivs();
+
     return (
-        <div style={{backgroundColor: generateColor()}}>
-            <h1 style={{color: generateColor()}}>{generateColor()}</h1>
+        <div>
+            <h1 style={{color: hex}}>{hex}</h1>
+            <div>
+            {colorDivs.map((mappedColor) => {
+                console.log(mappedColor)
+                return (
+                    <h1 key={mappedColor} style={{color: mappedColor}}>lol</h1>
+                )
+            })}
+            </div>
         </div>
     )
 }
