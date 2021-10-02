@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import { reducer } from './reducers'
 
 const initialState = {
-  guessValue = "none"
+  guessValue: "none"
 }
 
 export default createStore(

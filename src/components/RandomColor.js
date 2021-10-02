@@ -6,17 +6,23 @@ function RandomColor({mappedColor, correctColor}) {
     const [show, setShow] = useState(false);
     const guessValue = useSelector((state) => state.guessValue);
     const dispatch = useDispatch();
+    console.log(guessValue)
 
     //check hex for clicked choice
     const click = function(playerGuess) {
         if (playerGuess === correctColor) {
             dispatch({
                 type: UPDATE_GUESS,
-                guessValue: playerGuess
+                guessValue: "correct"
             })
+            console.log(guessValue)
         } else if (playerGuess !== correctColor) {
             setShow(true)
-            console.log('wrong...')
+            dispatch({
+                type: UPDATE_GUESS,
+                guessValue: "wrong"
+            })
+            console.log(guessValue)
         }
     }
 

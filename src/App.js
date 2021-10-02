@@ -1,9 +1,13 @@
 import './App.css';
 import GenerateColors from './components/GenerateColors';
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 function App() {
   return (
-    <GenerateColors />
+    <Provider store={store}>
+      <GenerateColors />
+    </Provider>
   );
 }
 
