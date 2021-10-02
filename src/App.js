@@ -1,9 +1,9 @@
 import './App.css';
-import RandomColor from './components/RandomColor';
+import GenerateColors from './components/GenerateColors';
 
 function App() {
   return (
-    <RandomColor />
+    <GenerateColors />
   );
 }
 

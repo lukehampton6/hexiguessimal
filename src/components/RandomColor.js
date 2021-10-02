@@ -1,52 +1,20 @@
-function RandomColor() {
-    // generate random hexcode
-    const generateColor = function() {
-       let randomColor = '#'
-       while (randomColor.length < 7) {
-           randomColor += (Math.round(Math.random() * 15)).toString(16)
-       }
-       return randomColor;
-    }
+import {useState} from 'react'
 
-    //store one hexcode for correct choice and create empty array for other hexcodes
-    const correctColor = generateColor();
-    const colorArray = [];
-
-    //create multiple hexcodes for wrong answers and push to array
-    const generateColorArray = function() {
-        for (let i = 0; i < 5; i++) {
-            const newColor = generateColor()
-            colorArray.push(newColor);
-        }
-    }
-    generateColorArray();
-
-    //add correct choice to array then shuffle order
-    colorArray.push(correctColor);
-    const shuffledColors = colorArray.sort(() => Math.random() - 0.5);
+function RandomColor({mappedColor, correctColor}) {
+    const [show, setShow] = useState(false);
 
     //check hex for clicked choice
     const click = function(playerGuess) {
         if (playerGuess === correctColor) {
             console.log('correct!')
         } else if (playerGuess !== correctColor) {
+            setShow(true)
             console.log('wrong...')
         }
     }
 
     return (
-        <div>
-            <h1 className="hexcode" style={{color: correctColor}}>{correctColor}</h1>
-            <div>
-                <ul className="colorList">
-            {shuffledColors.map((mappedColor) => {
-                return (
-                    <li key={mappedColor} className="colorDiv" onClick={() => click(mappedColor)}  style={{backgroundColor: mappedColor}}></li>
-                )
-            })}
-            </ul>
-            </div>
-        </div>
+        <li className={show ? 'hidden colorDiv' : 'colorDiv'} onClick={() => click(mappedColor)}  style={{backgroundColor: mappedColor}}></li>
     )
 }
 
