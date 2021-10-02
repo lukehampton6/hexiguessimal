@@ -12,7 +12,22 @@ code {
     monospace;
 }
 
+.hexcode {
+  text-align: center;
+}
+
+.colorList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+}
+
 .colorDiv {
-  width: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  list-style: none;
+  margin: 15px;
 }

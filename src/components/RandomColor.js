@@ -25,21 +25,26 @@ function RandomColor() {
     colorArray.push(correctColor);
     const shuffledColors = colorArray.sort(() => Math.random() - 0.5);
 
-    const log = function(key) {
-        if (key === correctColor) {
+    //check hex for clicked choice
+    const click = function(playerGuess) {
+        if (playerGuess === correctColor) {
             console.log('correct!')
+        } else if (playerGuess !== correctColor) {
+            console.log('wrong...')
         }
     }
 
     return (
         <div>
-            <h1 style={{color: correctColor}}>{correctColor}</h1>
+            <h1 className="hexcode" style={{color: correctColor}}>{correctColor}</h1>
             <div>
+                <ul className="colorList">
             {shuffledColors.map((mappedColor) => {
                 return (
-                    <h1 key={mappedColor} onClick={() => log(mappedColor)} className="colorDiv" style={{backgroundColor: mappedColor}}>lol</h1>
+                    <li key={mappedColor} className="colorDiv" onClick={() => click(mappedColor)}  style={{backgroundColor: mappedColor}}></li>
                 )
             })}
+            </ul>
             </div>
         </div>
     )
