@@ -42,8 +42,8 @@ function GenerateColors() {
             })}
             </ul>
             </div>
-            <h1>Correct!</h1>
-            <h1>Wrong :(</h1>
+            <h1 className="hexcode">Nice!</h1>
+            <h1 className="hexcode">Oops :(</h1>
         </div>
     )
 }

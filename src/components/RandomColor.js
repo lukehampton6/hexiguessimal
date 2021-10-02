@@ -1,12 +1,19 @@
 import {useState} from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { UPDATE_GUESS } from '../utils/actions';
 
 function RandomColor({mappedColor, correctColor}) {
     const [show, setShow] = useState(false);
+    const guessValue = useSelector((state) => state.guessValue);
+    const dispatch = useDispatch();
 
     //check hex for clicked choice
     const click = function(playerGuess) {
         if (playerGuess === correctColor) {
-            console.log('correct!')
+            dispatch({
+                type: UPDATE_GUESS,
+                guessValue: playerGuess
+            })
         } else if (playerGuess !== correctColor) {
             setShow(true)
             console.log('wrong...')
