@@ -1,6 +1,9 @@
 import RandomColor from "./RandomColor";
+import { useSelector } from "react-redux";
 
-function GenerateColors() {   
+function GenerateColors() {  
+    // const guessValue = useSelector((state) => state.guessValue);
+
     // generate random hexcode
     const generateColor = function() {
        let randomColor = '#'
@@ -42,8 +45,7 @@ function GenerateColors() {
             })}
             </ul>
             </div>
-            <h1 className="hexcode">Nice!</h1>
-            <h1 className="hexcode">Oops :(</h1>
+                <h1 className="hexcode">Nice!</h1>
         </div>
     )
 }
