@@ -16,6 +16,19 @@ code {
   text-align: center;
 }
 
+.modeList {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  color: gray;
+}
+
+.mode:hover {
+  cursor: pointer;
+  color: black;
+}
+
 .colorList {
   display: flex;
   flex-wrap: wrap;

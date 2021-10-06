@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { UPDATE_GUESS } from '../utils/actions';
 import RandomColor from "./RandomColor";
 
 function GenerateColors() {  
     const guessValue = useSelector((state) => state.guessValue);
+    const [mode, setMode] = useState(2);
     const dispatch = useDispatch();
 
+    //rerender page if guess was correct
     if (guessValue === "correct") {
         dispatch({
             type: UPDATE_GUESS,
@@ -28,7 +31,7 @@ function GenerateColors() {
 
     //create multiple hexcodes for wrong answers and push to array
     const generateColorArray = function() {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < mode; i++) {
             const newColor = generateColor()
             colorArray.push(newColor);
         }
@@ -37,10 +40,19 @@ function GenerateColors() {
 
     //add correct choice to array then shuffle order
     colorArray.push(correctColor);
-    const shuffledColors = colorArray.sort(() => Math.random() - 0.5);    
+    const shuffledColors = colorArray.sort(() => Math.random() - 0.5);   
+
+    const difficultySelect = function(num) {
+        setMode(num);
+    };
 
     return (
         <div>
+            <ul className="modeList">
+                <li className="mode" onClick={() => difficultySelect(2)}>easy</li>
+                <li className="mode" onClick={() => difficultySelect(5)}>medium</li>
+                <li className="mode" onClick={() => difficultySelect(8)}>hard</li>
+            </ul>
             <h1 className="hexcode" style={{color: correctColor}}>{correctColor}</h1>
             <div>
                 <ul className="colorList">
@@ -54,7 +66,6 @@ function GenerateColors() {
             })}
             </ul>
             </div>
-                <h1 className="hexcode">Nice!</h1>
         </div>
     )
 }
