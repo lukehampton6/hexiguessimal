@@ -54,7 +54,7 @@ function GenerateColors() {
                 <li className="mode" onClick={() => difficultySelect(5)}>medium</li>
                 <li className="mode" onClick={() => difficultySelect(8)}>hard</li>
             </ul>
-            <h1 className="hexcode" style={{color: correctColor}}>{correctColor}</h1>
+            <h1 className="hexcode">{correctColor}</h1>
             <div>
                 <ul className="colorList">
             {shuffledColors.map((mappedColor) => {
