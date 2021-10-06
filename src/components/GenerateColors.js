@@ -48,6 +48,7 @@ function GenerateColors() {
 
     return (
         <div>
+            <h1 className="header">HEXIGUESSIMAL</h1>
             <ul className="modeList">
                 <li className="mode" onClick={() => difficultySelect(2)}>easy</li>
                 <li className="mode" onClick={() => difficultySelect(5)}>medium</li>
