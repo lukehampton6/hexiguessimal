@@ -1,9 +1,18 @@
+import { useSelector, useDispatch } from "react-redux";
+import { UPDATE_GUESS } from '../utils/actions';
 import RandomColor from "./RandomColor";
-import { useSelector } from "react-redux";
 
 function GenerateColors() {  
-    // const guessValue = useSelector((state) => state.guessValue);
+    const guessValue = useSelector((state) => state.guessValue);
+    const dispatch = useDispatch();
 
+    if (guessValue === "correct") {
+        dispatch({
+            type: UPDATE_GUESS,
+            guessValue: "none"
+        });
+    };
+    
     // generate random hexcode
     const generateColor = function() {
        let randomColor = '#'
