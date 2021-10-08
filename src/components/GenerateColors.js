@@ -49,11 +49,13 @@ function GenerateColors() {
     return (
         <div>
             <h1 className="header">HEXIGUESSIMAL</h1>
+            <div className="container">
             <ul className="modeList">
                 <li className="mode" onClick={() => difficultySelect(2)}>easy</li>
                 <li className="mode" onClick={() => difficultySelect(5)}>medium</li>
                 <li className="mode" onClick={() => difficultySelect(8)}>hard</li>
             </ul>
+            </div>
             <h1 className="hexcode">{correctColor}</h1>
             <div>
                 <ul className="colorList">
