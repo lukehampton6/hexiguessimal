@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/hexiguessimal/static/css/main.3b1f03b2.chunk.css",
-    "main.js": "/hexiguessimal/static/js/main.d1fb4af6.chunk.js",
-    "main.js.map": "/hexiguessimal/static/js/main.d1fb4af6.chunk.js.map",
+    "main.css": "/hexiguessimal/static/css/main.a66ff3d1.chunk.css",
+    "main.js": "/hexiguessimal/static/js/main.92a7349b.chunk.js",
+    "main.js.map": "/hexiguessimal/static/js/main.92a7349b.chunk.js.map",
     "runtime-main.js": "/hexiguessimal/static/js/runtime-main.4622416f.js",
     "runtime-main.js.map": "/hexiguessimal/static/js/runtime-main.4622416f.js.map",
     "static/js/2.8caf765c.chunk.js": "/hexiguessimal/static/js/2.8caf765c.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.b4b58efd.chunk.js": "/hexiguessimal/static/js/3.b4b58efd.chunk.js",
     "static/js/3.b4b58efd.chunk.js.map": "/hexiguessimal/static/js/3.b4b58efd.chunk.js.map",
     "index.html": "/hexiguessimal/index.html",
-    "static/css/main.3b1f03b2.chunk.css.map": "/hexiguessimal/static/css/main.3b1f03b2.chunk.css.map",
+    "static/css/main.a66ff3d1.chunk.css.map": "/hexiguessimal/static/css/main.a66ff3d1.chunk.css.map",
     "static/js/2.8caf765c.chunk.js.LICENSE.txt": "/hexiguessimal/static/js/2.8caf765c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4622416f.js",
     "static/js/2.8caf765c.chunk.js",
-    "static/css/main.3b1f03b2.chunk.css",
-    "static/js/main.d1fb4af6.chunk.js"
+    "static/css/main.a66ff3d1.chunk.css",
+    "static/js/main.92a7349b.chunk.js"
   ]
 }
