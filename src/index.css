@@ -92,6 +92,14 @@ code {
   transform: scale(1.1);
 }
 
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
 .hidden {
   display: none;
 }

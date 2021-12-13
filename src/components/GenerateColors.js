@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { UPDATE_GUESS } from '../utils/actions';
+import { UPDATE_GUESS, UPDATE_ANSWER } from '../utils/actions';
 import RandomColor from "./RandomColor";
 
 function GenerateColors() {  
     const guessValue = useSelector((state) => state.guessValue);
+    const answerValue = useSelector((state) => state.answerValue);
     const [mode, setMode] = useState(2);
     const dispatch = useDispatch();
 
@@ -68,6 +69,12 @@ function GenerateColors() {
                 )
             })}
             </ul>
+            {answerValue == "correct" &&
+            <h1 className="header correct">Correct!</h1>
+            }
+            {answerValue == "incorrect" &&
+            <h1 className="header incorrect">Incorrect...</h1>
+            }
             </div>
         </div>
     )

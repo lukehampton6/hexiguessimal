@@ -1,1 +1,2 @@
 export const UPDATE_GUESS = "UPDATE_GUESS";
+export const UPDATE_ANSWER = "UPDATE_ANSWER";
