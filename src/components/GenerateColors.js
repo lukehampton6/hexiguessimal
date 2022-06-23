@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { UPDATE_GUESS, UPDATE_ANSWER } from '../utils/actions';
+import { UPDATE_GUESS } from '../utils/actions';
 import RandomColor from "./RandomColor";
 
 function GenerateColors() {  
     const guessValue = useSelector((state) => state.guessValue);
-    const answerValue = useSelector((state) => state.answerValue);
     const [mode, setMode] = useState(2);
     const dispatch = useDispatch();
 
@@ -19,11 +18,11 @@ function GenerateColors() {
     
     // generate random hexcode
     const generateColor = function() {
-       let randomColor = '#'
-       while (randomColor.length < 7) {
+        let randomColor = '#'
+        while (randomColor.length < 7) {
            randomColor += (Math.round(Math.random() * 15)).toString(16)
-       }
-       return randomColor;
+        }
+        return randomColor;
     }
 
     //store one hexcode for correct choice and create empty array for other hexcodes
@@ -69,12 +68,6 @@ function GenerateColors() {
                 )
             })}
             </ul>
-            {answerValue == "correct" &&
-            <h1 className="header correct">Correct!</h1>
-            }
-            {answerValue == "incorrect" &&
-            <h1 className="header incorrect">Incorrect...</h1>
-            }
             </div>
         </div>
     )
